@@ -43,7 +43,9 @@ function Login() {
 
     inputPass && loginFetch();
   };
+  console.log(inputs)
   const loginFetch = () => {
+    
     fetch(LOGIN_API, {
       method: "POST",
       body: JSON.stringify({
@@ -65,31 +67,22 @@ function Login() {
         }
       });
   };
-  const showAlert = () => {
-    alert("이미 로그인이 되있습니다!");
-    history.push("/");
-  };
+
   return (
-    <>
-      {sessionStorage.getItem("ACCESS_TOKEN") ? (
-        <div alert={showAlert()}></div>
-      ) : (
-        <LoginMain>
-          <LoginLayout
-            format={loginProps}
-            goMain={goMain}
-            onModify={handleIdPasswordInput}
-            value={setInputs}
-            setCheckEmail={setCheckEmail}
-            setCheckPassword={setCheckPassword}
-            checkValidation={checkValidation}
-            clicked={clicked}
-            checkEmail={checkEmail}
-            checkPassword={checkPassword}
-          />
-        </LoginMain>
-      )}
-    </>
+    <LoginMain>
+      <LoginLayout
+        format={loginProps}
+        goMain={goMain}
+        onModify={handleIdPasswordInput}
+        value={setInputs}
+        setCheckEmail={setCheckEmail}
+        setCheckPassword={setCheckPassword}
+        checkValidation={checkValidation}
+        clicked={clicked}
+        checkEmail={checkEmail}
+        checkPassword={checkPassword}
+      />
+    </LoginMain>
   );
 }
 

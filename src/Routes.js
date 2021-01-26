@@ -8,7 +8,6 @@ import CategoryPost from "./Pages/CategoryBoard/CategoryPost";
 import BoardDetail from "./Pages/Users/BoardDetail";
 import EditUser from "./Pages/Users/EditUser";
 import CategoryList from "./Pages/CategoryList/CategoryList";
-import MyPage from "./Pages/MyPage/MyPage";
 
 class Routes extends React.Component {
   render() {
@@ -20,9 +19,8 @@ class Routes extends React.Component {
           <Route exact path="/categoryPost/:categoryId" component={CategoryPost} />
           <Route exact path="/boardDetail/:categoryId/:boardId" component={BoardDetail} />
           <Route exact path="/user/edit/:categoryId/:boardId" component={EditUser} />
-          <Route exact path="/Signup" component={Signup} />
-          <Route exact path="/forum/1" component={CategoryList} />
-          <Route exact path="/MyPage" component={MyPage} />
+          <Route exact path="/SignUp" component={Signup} />
+          <Route exact path="/forum/:id" component={CategoryList} />
         </Switch>
         <Footer />
       </Router>
